@@ -8,6 +8,10 @@ export const Container = styled.div`
     height: 72px;
     margin: auto;
     padding: 8px 20px;
+
+    @media (max-width: 1000px) {
+        width: 100%;
+    }
 `;
 
 export const Navigation = styled.div`
