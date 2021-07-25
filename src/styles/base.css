@@ -1,0 +1,22 @@
+:root {
+    --orange: #FF5233;
+    --gray-darker: #34302F;
+}
+
+* {
+    font-family: "Hero New";
+    color: var(--gray-darker);
+    font-weight: normal;
+}
+
+
+/* Text */
+.u-big {}
+
+.u-medium {}
+
+.u-small {}
+
+strong {
+    font-weight: bold;
+}
