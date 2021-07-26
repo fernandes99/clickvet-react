@@ -49,12 +49,24 @@ export const Main = styled.div`
     width: 120px;
     color: white;
     border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background: #ec4527;
+    }
+  }
+
+  img {
+    position: relative;
+    right: -40px;
   }
 `;
 
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     h1 {
       font-size: 32px;
@@ -68,6 +80,6 @@ export const Info = styled.div`
 
     h2 {
       font-size: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
 `;
