@@ -13,7 +13,6 @@ export const Container = styled.div`
 
   @media (max-width: 1000px) {
     width: 100%;
-    padding: 80px 40px;
   }
 `;
 
@@ -30,6 +29,7 @@ export const Main = styled.div`
     border: 1px solid #E1E1E1;
     border-radius: 8px;
     height: 58px;
+    background: white;
   }
 
   input {
@@ -60,6 +60,13 @@ export const Main = styled.div`
   img {
     position: relative;
     right: -40px;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      right: -100px;
+      width: 330px;
+      opacity: .4;
+    }
   }
 `;
 
@@ -67,9 +74,10 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    z-index: var(--z1);
 
     h1 {
-      font-size: 32px;
+      font-size: 36px;
       line-height: 120%;
       margin-bottom: 8px;
 
@@ -82,4 +90,8 @@ export const Info = styled.div`
       font-size: 16px;
       margin-bottom: 24px;
     }
+`;
+
+export default Section = styled.div `
+  
 `;

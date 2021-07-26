@@ -1,6 +1,12 @@
 :root {
     --orange: #FF5233;
     --gray-darker: #34302F;
+
+    --z1: 1;
+    --z2: 10;
+    --z3: 100;
+    --z4: 1000;
+    --z5: 10000;
 }
 
 * {
@@ -9,6 +15,19 @@
     font-weight: normal;
 }
 
+/* Button */
+button {
+    background: var(--orange);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 8px 12px;
+}
+
+button:hover {
+    background: #ec4527;
+}
 
 /* Text */
 .u-big {}
@@ -17,6 +36,10 @@
 
 .u-small {}
 
+.u-link {}
+
 strong {
     font-weight: bold;
 }
+
+/* Index */
