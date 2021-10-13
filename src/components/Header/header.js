@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { Fixed, Container, Navigation } from './styles';
+import logoImage from '../../assets/img/logo.svg';
 
 const Header = () => {
     return (
         <Fixed>
             <Container>
-                <img src={'./src/assets/img/logo.svg'} width="120" alt="ClickVet atendimento de veterinário a domicílio" />
+                <img src={logoImage} width="120" alt="ClickVet atendimento de veterinário a domicílio" />
                 <Navigation>
                     <ul>
                         <li>

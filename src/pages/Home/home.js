@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 import Header from '../../components/Header/header';
 import { Background, Container, Main, Info } from './styles';
-import toast, { Toaster } from 'react-hot-toast';
+import dogImage from '../../assets/img/happy-dog.png';
 
 export default class Home extends React.Component {
   state = {
@@ -59,7 +60,7 @@ export default class Home extends React.Component {
                         <button type="button" onClick={this.searchCEP}>Buscar</button>
                       </form>
                   </Info>
-                  <img src={'./src/assets/img/happy-dog.png'} alt="Cachorro feliz" width="420"/>
+                  <img src={dogImage} alt="Cachorro feliz" width="420"/>
               </Main>
 
 
