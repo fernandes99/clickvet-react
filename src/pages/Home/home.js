@@ -44,6 +44,13 @@ export default class Home extends React.Component {
       });
   }
 
+  handleKeyDown = ev => {
+    if (ev.key === 'Enter') return this.searchCEP();
+
+    const isNumber = isFinite(ev.key);
+    if (this.state.cep.length > 8 && isNumber) ev.preventDefault();
+  }
+
   render() {
     return (
       <>
@@ -55,10 +62,10 @@ export default class Home extends React.Component {
                       <h1>Encontre os melhores <br /><strong>veterinários perto de você!</strong></h1>
                       <h2>Faça consultas, exames e vacinas sem sair da sua casa</h2>
 
-                      <form>
-                        <input onChange={this.setCepValue} maxLength="8" placeholder={"Digite seu CEP"}/>
-                        <button type="button" onClick={this.searchCEP}>Buscar</button>
-                      </form>
+                      <div>
+                        <input type="number" onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>
+                        <button onClick={this.searchCEP}>Buscar</button>
+                      </div>
                   </Info>
                   <img src={dogImage} alt="Cachorro feliz" width="420"/>
               </Main>
