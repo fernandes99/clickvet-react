@@ -1,7 +1,6 @@
-# clickvet-react
+## Access to preview:
+### https://fernandes99.github.io/clickvet-react/
 
-### Install:
-`npm i`
+___
 
-### Start:
-`npm start`
+> Esse é um projeto **ainda não completo** para estudo.
