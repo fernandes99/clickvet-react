@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Header from '../../components/Header/header';
-import { Background, Container, Main, Info, Section } from './styles';
+import { Background, Container, Main, Info } from './styles';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default class Home extends React.Component {
@@ -62,9 +62,7 @@ export default class Home extends React.Component {
                   <img src={'./src/assets/img/happy-dog.png'} alt="Cachorro feliz" width="420"/>
               </Main>
 
-              <Section>
-                
-              </Section>
+
           </Container>
           <Toaster position="bottom-center" />
         </Background>

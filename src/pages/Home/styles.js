@@ -91,7 +91,3 @@ export const Info = styled.div`
       margin-bottom: 24px;
     }
 `;
-
-export default Section = styled.div `
-  
-`;
