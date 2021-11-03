@@ -3,4 +3,4 @@
 
 ___
 
-> Esse é um projeto **ainda não completo** para estudo.
+> Esse é um projeto **não completo** para estudo.
