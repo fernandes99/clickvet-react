@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles/reset.css";
 import "./styles/base.css";
+import "./styles/fonts.css";
 
 import Home from "./pages/Home/home";
 export default class App extends React.Component {
