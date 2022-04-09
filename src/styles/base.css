@@ -10,7 +10,7 @@
 }
 
 * {
-    font-family: "Hero New";
+    font-family: "Hero New", sans-serif;
     color: var(--gray-darker);
     font-weight: normal;
 }
