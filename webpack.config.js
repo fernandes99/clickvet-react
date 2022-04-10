@@ -1,6 +1,9 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   devtool: "source-map",
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -21,6 +24,9 @@ module.exports = {
         use: [ 'file-loader' ]
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.jsx']

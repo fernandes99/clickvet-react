@@ -1,6 +1,8 @@
 :root {
     --orange: #FF5233;
+    --black: #181615;
     --gray-darker: #34302F;
+    --gray: #676B70;
 
     --z1: 1;
     --z2: 10;
@@ -13,6 +15,7 @@
     font-family: "Hero New", sans-serif;
     color: var(--gray-darker);
     font-weight: normal;
+    letter-spacing: .2px;
 }
 
 /* Button */
@@ -22,11 +25,14 @@ button {
     border-radius: 6px;
     cursor: pointer;
     transition: all .3s;
-    padding: 8px 12px;
+    padding: 8px 16px;
+    box-shadow: 0px 6px 16px rgba(255, 71, 31, 0.25);
+    border-radius: 50px;
 }
 
 button:hover {
     background: #ec4527;
+    box-shadow: 0px 4px 12px rgba(255, 71, 31, 0.60);
 }
 
 /* Text */

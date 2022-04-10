@@ -6,6 +6,7 @@ export const Fixed = styled.div `
     justify-content: center;
     width: 100vw;
     z-index: var(--z1);
+    font-size: 14px;
 `;
 
 export const Container = styled.div `
@@ -15,10 +16,11 @@ export const Container = styled.div `
     width: 1000px;
     height: 72px;
     margin: auto;
-    padding: 8px 20px;
+    padding: 8px 0;
 
     @media (max-width: 1000px) {
         width: 100%;
+        padding: 8px 16px;
     }
 `;
 
@@ -40,6 +42,12 @@ export const Navigation = styled.nav `
     }
 
     button {
-        font-size: 14px;
+        font-size: 1em;
+    }
+
+    @media (max-width: 1000px) {
+        li:not(:last-child) {
+            display: none;
+        }
     }
 `;

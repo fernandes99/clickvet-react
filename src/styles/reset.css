@@ -40,6 +40,8 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -89,6 +91,9 @@ textarea, input:focus {
 button {
   border: unset;
   background-color: transparent;
+}
+i {
+  font-style: normal;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
