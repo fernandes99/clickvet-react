@@ -26,19 +26,21 @@ export const Card = styled.div`
     height: auto;
   }
 
-  i, p {
+  .icon, p {
     color: var(--orange);
+    stroke: var(--orange);
     transition: all .3s;
   }
 
   &:hover {
     box-shadow: 0px 8px 16px rgba(63, 15, 0, 0.15);
-    i {
+
+    .icon {
       transform: translateX(5px);
     }
   }
 
   @media (max-width: 1000px) {
-    
+
   }
 `;

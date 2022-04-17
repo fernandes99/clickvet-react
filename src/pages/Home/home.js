@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Background, Container, Main, Info } from './styles';
 import dogImage from '../../assets/img/happy-dog.png';
 import Services from '../../components/Services/services';
-import Vets from '../Vets/vets';
+import VetList from '../VetList/VetList';
 
 export default class Home extends React.Component {
   state = {
@@ -58,7 +58,7 @@ export default class Home extends React.Component {
   render() {
     const { redirectVetsPage } = this.state;
 
-    if (redirectVetsPage) return <Vets to='/vets'/>
+    if (redirectVetsPage) return <VetList to='/vets'/>
 
     return (
       <>

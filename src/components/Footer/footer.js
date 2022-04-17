@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Fixed, Container, Navigation } from './styles';
-import logoImage from '../../assets/img/logo.svg';
+import { Container } from './styles';
 
 const Footer = () => {
     return (

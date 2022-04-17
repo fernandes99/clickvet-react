@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const VetList = styled.ul`
+export const VetListContainer = styled.ul`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

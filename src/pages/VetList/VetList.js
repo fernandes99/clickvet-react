@@ -1,8 +1,8 @@
 import React from 'react';
 import VetItem from '../../components/Vet/Item/vetItem';
-import { Container, VetList, ContentHeader, FilterButton } from './styles';
+import { Container, VetListContainer, ContentHeader, FilterButton } from './styles';
 
-export default class Vets extends React.Component {
+export default class VetList extends React.Component {
   state = {};
 
   constructor (props) {
@@ -17,7 +17,7 @@ export default class Vets extends React.Component {
               <h2>Veterinários perto de você:</h2>
               <FilterButton>Filtrar</FilterButton>
             </ContentHeader>
-            <VetList>
+            <VetListContainer>
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
@@ -26,7 +26,7 @@ export default class Vets extends React.Component {
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
                 <VetItem name="Roberto Fernandes" appoitmentValue="R$ 80,00" image="https://i.imgur.com/3YWZFpf.png" />
-            </VetList>
+            </VetListContainer>
         </Container>
       </>
     );

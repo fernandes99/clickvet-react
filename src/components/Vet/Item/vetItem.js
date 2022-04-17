@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiChevronRight } from 'react-icons/fi';
 
 import { Item, Card } from './styles';
 
@@ -11,7 +12,7 @@ const VetItem = (props) => {
                     <strong>{props.name}</strong>
                     <p>{props.appoitmentValue}</p>
                 </div>
-                <i>⮞</i>
+                <FiChevronRight className='icon' size={32} />
             </Card>
         </Item>
     );

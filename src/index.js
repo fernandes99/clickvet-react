@@ -11,7 +11,13 @@ import Routes from './routes';
 import Header from "./components/Header/header";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer/footer";
+
 export default class App extends React.Component {
+    constructor () {
+        global.mode = process.env.NODE_ENV;
+        super();
+    }
+
     render() {
         return (
             <Router>
