@@ -11,7 +11,7 @@ import VetProfile from "./pages/VetProfile/vetProfile";
 
 export default function MainRoutes() {
     const navigate = useNavigate();
-    const basePath = global.mode === "production" ? '/clickvet-react' : '/';
+    const basePath = global.mode === "production" ? '/' : '/';
 
     return (
         <Routes>
