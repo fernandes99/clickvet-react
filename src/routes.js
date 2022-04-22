@@ -11,13 +11,12 @@ import VetProfile from "./pages/VetProfile/vetProfile";
 
 export default function MainRoutes() {
     const navigate = useNavigate();
-    const basePath = global.mode === "production" ? '/' : '/';
 
     return (
         <Routes>
-            <Route path={`${basePath}`} element={<Home navigate={navigate} />} />
-            <Route path={`${basePath}/veterinarios/:city`} element={<VetList />} />
-            <Route path={`${basePath}/veterinarios/:city/:vetId`} element={<VetProfile />} />
+            <Route path='/' element={<Home navigate={navigate} />} />
+            <Route path='veterinarios/:city' element={<VetList />} />
+            <Route path='veterinarios/:city/:vetId' element={<VetProfile />} />
         </Routes>
     );
 }

@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 
 import VetItem from '../../components/Vet/Item/vetItem';
 import { Container, VetListContainer, ContentHeader, FilterButton } from './styles';
 
-export default class VetList extends React.Component {
+// for use params route in class component
+// https://stackoverflow.com/questions/58548767/react-router-dom-useparams-inside-class-component
+function withRouter (Component) {
+  return props => <Component {...props} params={useParams()} location={useLocation()} />;
+}
+
+class VetList extends React.Component {
   state = {
     loading: true,
     openModal: false,
@@ -16,10 +22,9 @@ export default class VetList extends React.Component {
     return await fetch(url).then(res => res.json());
   }
 
-  async componentDidMount () {
-    let test = await this.getVetList();
+  async componentDidMount (props) {
     this.setState({
-      vetList: test,
+      vetList: await this.getVetList(),
       loading: false
     });
   }
@@ -46,7 +51,7 @@ export default class VetList extends React.Component {
               : <VetListContainer>
                   {
                     this.state.vetList.map(item => (
-                      <Link key={item[0]} to="/">
+                      <Link key={item[0]} to={`${item[1]}`}>
                         <VetItem key={item[0]} name={`${item[1]}`} appoitmentValue={`${item[2]}`} image={`${item[3]}`} about={`${item[4]}`} onClick={() => this.openModal() }/>
                       </Link>
                     ))
@@ -58,3 +63,5 @@ export default class VetList extends React.Component {
     );
   }
 }
+
+export default withRouter(VetList);

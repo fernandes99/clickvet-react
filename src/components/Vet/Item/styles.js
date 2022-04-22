@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Item = styled.div`
   display: flex;
+  height: 100%;
 
   @media (max-width: 1000px) {
   }

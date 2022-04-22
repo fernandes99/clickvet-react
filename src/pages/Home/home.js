@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { Container, Main, Info } from './styles';
 import dogImage from '../../assets/img/happy-dog.png';
 import Services from '../../components/Services/services';
-import Navigation from "../../helpers/Navigation";
 
 export default class Home extends React.Component {
   state = {
@@ -35,7 +34,7 @@ export default class Home extends React.Component {
         toast.success(<b>CEP encontrado!</b>);
         this.setState({ address: res.data });
 
-        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, {state: 'teste'});
+        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, { state: { test: 'teste' } });
       })
       .catch(error => {
         console.log('Error', error.message);
