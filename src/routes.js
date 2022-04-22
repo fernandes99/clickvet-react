@@ -1,17 +1,23 @@
 import React from "react";
 import {
     Routes,
-    Route
+    Route,
+    useNavigate
 } from 'react-router-dom';
 
 import Home from "./pages/Home/home";
 import VetList from "./pages/VetList/VetList";
+import VetProfile from "./pages/VetProfile/vetProfile";
 
 export default function MainRoutes() {
+    const navigate = useNavigate();
+    const basePath = global.mode === "production" ? '/clickvet-react' : '/';
+
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/vets" element={<VetList />} />
+            <Route path={`${basePath}`} element={<Home navigate={navigate} />} />
+            <Route path={`${basePath}/veterinarios/:city`} element={<VetList />} />
+            <Route path={`${basePath}/veterinarios/:city/:vetId`} element={<VetProfile />} />
         </Routes>
     );
 }

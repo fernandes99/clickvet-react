@@ -3,11 +3,14 @@ const path = require('path');
 const webpack = require("webpack");
 
 module.exports = (env, args) => {
-  console.log(`Mode Build: ${args.mode}`);
+  console.log(`MODE: ${args.mode}`);
 
   return {
     devtool: "source-map",
     entry: path.resolve(__dirname, "src", "index.js" ),
+    output: {
+      publicPath: '/',
+    },
     module: {
       rules: [
         {

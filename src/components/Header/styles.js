@@ -7,6 +7,7 @@ export const Fixed = styled.div `
     width: 100vw;
     z-index: var(--z1);
     font-size: 14px;
+    border-bottom: 1px solid var(--gray-lighter);
 `;
 
 export const Container = styled.div `
@@ -14,8 +15,7 @@ export const Container = styled.div `
     align-items: center;
     justify-content: space-between;
     width: 1000px;
-    height: 72px;
-    margin: auto;
+    margin: 0 auto;
     padding: 8px 0;
 
     @media (max-width: 1000px) {

@@ -2,50 +2,46 @@ import React from 'react';
 import axios from 'axios';
 
 import toast from "react-hot-toast";
-import { Background, Container, Main, Info } from './styles';
+import { Container, Main, Info } from './styles';
 import dogImage from '../../assets/img/happy-dog.png';
 import Services from '../../components/Services/services';
-import VetList from '../VetList/VetList';
+import Navigation from "../../helpers/Navigation";
 
 export default class Home extends React.Component {
   state = {
-    cep: "",
+    cep: localStorage.getItem('CEPSearched') ?? '',
     address: {},
-    redirectVetsPage: false
+    cepSearched: localStorage.getItem('CEPSearched')
   };
 
   constructor (props) {
     super(props);
   }
 
-  setCepValue = event => {
-    this.setState({cep: event.target.value});
-  }
+  setCepValue = event => this.setState({cep: event.target.value});
 
   searchCEP = () => {
-    
-
     if (this.state.cep.length <= 0) {
-      let emojis = ['😊','🙃', '🤪', '🤓', '🤯', '😉'];
-      let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      const emojis = ['😊','🙃', '🤪', '🤓', '🤯', '😉'];
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
-      toast('Insira seu CEP', {
+      return toast('Insira seu CEP', {
         icon: randomEmoji,
       });
-
-      return;
     }
 
     axios.get(`https://viacep.com.br/ws/${this.state.cep}/json/`)
       .then(res => {
-        console.log(res);
         toast.success(<b>CEP encontrado!</b>);
-        this.setState({address: res.data, redirectVetsPage: true});
+        this.setState({ address: res.data });
+
+        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, {state: 'teste'});
       })
       .catch(error => {
         console.log('Error', error.message);
         toast.error(<b>CEP não encontrado.</b>);
-      });
+      })
+      .finally(localStorage.setItem('CEPSearched', `${this.state.cep}`));
   }
 
   handleKeyDown = ev => {
@@ -56,10 +52,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const { redirectVetsPage } = this.state;
-
-    if (redirectVetsPage) return <VetList to='/vets'/>
-
     return (
       <>
         <Container>
@@ -68,7 +60,7 @@ export default class Home extends React.Component {
                     <h1>Encontre os melhores <br /><strong>veterinários perto de você!</strong></h1>
                     <h2>Faça consultas, exames e vacinas sem sair da sua casa</h2>
                     <div>
-                      <input type="number" onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>
+                      <input type="number" defaultValue={this.state.cepSearched} onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>
                       <button onClick={this.searchCEP}>Buscar</button>
                     </div>
                 </Info>

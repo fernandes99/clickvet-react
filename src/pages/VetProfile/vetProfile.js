@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { Container } from './styles';
 
-export default class Vet extends React.Component {
+export default class VetProfile extends React.Component {
   state = {};
 
   constructor (props) {
@@ -12,6 +13,7 @@ export default class Vet extends React.Component {
     return (
       <>
         <Container>
+          <div>TESTE</div>
         </Container>
       </>
     );

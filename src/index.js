@@ -15,6 +15,7 @@ import Footer from "./components/Footer/footer";
 export default class App extends React.Component {
     constructor () {
         global.mode = process.env.NODE_ENV;
+
         super();
     }
 

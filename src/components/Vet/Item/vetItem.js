@@ -1,18 +1,28 @@
 import React from 'react';
 import { FiChevronRight } from 'react-icons/fi';
+import Avatar from '@mui/material/Avatar';
 
-import { Item, Card } from './styles';
+import { Item, Card, CardContent } from './styles';
 
 const VetItem = (props) => {
+    if (!props) return;
+
+    const formatedValue = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL', }).format((props.appoitmentValue / 100).toFixed(2));
+
     return (
-        <Item>
+        <Item onClick={props.onClick}>
             <Card>
-                <img srcSet={props.image} width={64} height={64} />
-                <div className='info'>
-                    <strong>{props.name}</strong>
-                    <p>{props.appoitmentValue}</p>
-                </div>
-                <FiChevronRight className='icon' size={32} />
+                <CardContent>
+                    <Avatar alt={props.name} src={props.image} sx={{ width: 70, height: 70 }}/>
+                    <div className='info'>
+                        <strong>{props.name}</strong>
+                        <p>{formatedValue}</p>
+                        <div>
+                            <span>{props.about}</span>
+                        </div>
+                    </div>
+                    <FiChevronRight className='icon' size={32} />
+                </CardContent>
             </Card>
         </Item>
     );
