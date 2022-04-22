@@ -5,10 +5,10 @@ export const Container = styled.div `
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     font-size: 14px;
+    padding: 0 0 80px;
 
     @media (max-width: 1000px) {
         width: 100%;
-        padding: 0 16px 80px;
     }
 
     .content {

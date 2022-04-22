@@ -9,11 +9,11 @@ export const Container = styled.div`
   align-items: center;
   width: 1000px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 0 20px;
 
   @media (max-width: 1000px) {
     width: 100%;
-    padding: 60px 16px;
+    padding: 0 16px;
   }
 `;
 
@@ -22,12 +22,14 @@ export const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 80px 0;
 
   img {
     position: relative;
     right: -40px;
 
     @media (max-width: 800px) {
+      padding: 60px 0 20px;
       display: none;
     }
   }
