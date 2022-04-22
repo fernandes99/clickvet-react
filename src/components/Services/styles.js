@@ -6,6 +6,11 @@ export const Container = styled.div `
     gap: 30px;
     font-size: 14px;
 
+    @media (max-width: 1000px) {
+        width: 100%;
+        padding: 0 16px 80px;
+    }
+
     .content {
         border-radius: 16px;
         box-shadow: 0px 4px 12px rgb(63 15 0 / 10%);

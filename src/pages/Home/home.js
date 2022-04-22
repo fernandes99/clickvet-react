@@ -67,10 +67,7 @@ export default class Home extends React.Component {
                 <img src={dogImage} alt="Cachorro feliz" width="420"/>
             </Main>
         </Container>
-
-        <Container>
-          <Services />
-        </Container>
+        <Services />
       </>
     );
   }
