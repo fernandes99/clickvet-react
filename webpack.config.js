@@ -34,8 +34,6 @@ module.exports = (env, args) => {
     },
     devServer: {
       historyApiFallback: true,
-      contentBase: './',
-      hot: true
     },
     resolve: {
       extensions: ['.js', '.jsx']
