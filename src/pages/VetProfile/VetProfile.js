@@ -1,10 +1,12 @@
-import { Avatar, Breadcrumbs, Chip, List, ListItem, ListItemAvatar } from '@mui/material';
+import { Avatar, Breadcrumbs } from '@mui/material';
 import React from 'react';
 import { useLocation, useParams } from 'react-router';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
+import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 
-import { Background, Container, Box, Tags, Rating, ProfileContent } from './styles';
+import { Background, Container, Box, Tags, Rating, ProfileContent, ListContent } from './styles';
+import ListItem from '../../components/Vet/Profile/ListItem';
 
 function withRouter (Component) {
   return props => <Component {...props} params={useParams()} location={useLocation()} />;
@@ -15,6 +17,9 @@ class VetProfile extends React.Component {
   }
 
   render() {
+    const icon = () => (
+      <FmdGoodOutlinedIcon />
+    )
     const data = this.props.location.state.vetProfileData;
     const specialties = data.specialties.split(', ');
     const formatedValue = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format((data.appoitmentValue / 100).toFixed(2));
@@ -58,13 +63,16 @@ class VetProfile extends React.Component {
 
         <Container>
           <Box>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <span>TESTE</span>
-                </ListItemAvatar>
-              </ListItem>
-            </List>
+            <ListContent>
+              <span className='list-title'>Mais informações:</span>
+              <ul>
+                <ListItem
+                  title="Avenida Soledade, 569 torre beta sala 1005/ 10 Andar"
+                  subtitle="Petrópolis, Porto Alegre DermaMed Center"
+                  icon={icon}
+                />
+              </ul>
+            </ListContent>
           </Box>
         </Container>
       </Background>

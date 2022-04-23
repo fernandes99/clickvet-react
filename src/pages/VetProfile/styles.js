@@ -100,6 +100,10 @@ export const ProfileContent = styled.div`
   }
 `;
 
+export const ListContent = styled.div`
+  
+`;
+
 export const Rating = styled.div`
   font-size: 17px;
   display: flex;
