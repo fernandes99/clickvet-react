@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 import toast from "react-hot-toast";
 import { Container, Main, Info } from './styles';
@@ -60,7 +61,7 @@ export default class Home extends React.Component {
                     <h2>Faça consultas, exames e vacinas sem sair da sua casa</h2>
                     <div>
                       <input type="number" defaultValue={this.state.cepSearched} onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>
-                      <button onClick={this.searchCEP}>Buscar</button>
+                      <button onClick={this.searchCEP}>Buscar CEP</button>
                     </div>
                 </Info>
                 <img src={dogImage} alt="Cachorro feliz" width="420"/>
