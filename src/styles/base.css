@@ -1,9 +1,13 @@
 :root {
     --orange: #FF5233;
+
     --black: #181615;
     --gray-darker: #34302F;
-    --gray: #676B70;
+    --gray: #969697;
+    --gray-light: #cccccf;
     --gray-lighter: #ececec;
+
+    --yellow: #E5B63A;
 
     --z1: 1;
     --z2: 10;

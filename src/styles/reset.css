@@ -108,3 +108,8 @@ i {
     scroll-behavior: auto !important;
   }
 }
+
+span {
+  font-size: inherit;
+  color: inherit;
+}

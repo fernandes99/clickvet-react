@@ -12,7 +12,7 @@ function withRouter (Component) {
 
 class VetList extends React.Component {
   getVetList = async () => {
-    const url = 'https://script.google.com/macros/s/AKfycbyMznKdp9vqTZ9ZEws-2KpcGQuf6BM2JW5tMUsPQwzVqCydmLPVKxmHu-uPpf3Maz02/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbxcNALXCmwW3zTGmT9_BG3Bvg4vZX_FtegnM49v2kaE92GTA7Url0E_PWUDPmjGD7UF/exec';
     return await fetch(url).then(res => res.json());
   }
 
@@ -40,8 +40,8 @@ class VetList extends React.Component {
               : <VetListContainer>
                   {
                     this.props.states.vetList.map(item => (
-                      <Link key={item[0]} to={`${item[1]}`} state={{ vetProfileData: item }}>
-                        <VetItem key={item[0]} name={`${item[1]}`} appoitmentValue={`${item[2]}`} image={`${item[3]}`} about={`${item[4]}`} />
+                      <Link key={item.veterinaryId} to={`${item.veterinaryId}`} state={{ vetProfileData: item }}>
+                        <VetItem key={item.veterinaryId} name={`${item.name}`} appoitmentValue={`${item.appoitmentValue}`} image={`${item.profileImageUrl}`} about={`${item.about}`} />
                       </Link>
                     ))
                   }
