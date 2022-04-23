@@ -12,7 +12,6 @@ function withRouter (Component) {
 
 class VetList extends React.Component {
   state = {
-    loading: true,
     openModal: false,
     vetList: []
   };
@@ -22,11 +21,12 @@ class VetList extends React.Component {
     return await fetch(url).then(res => res.json());
   }
 
-  async componentDidMount (props) {
+  async componentDidMount () {
     this.setState({
-      vetList: await this.getVetList(),
-      loading: false
+      vetList: await this.getVetList()
     });
+
+    this.props.dispatch({ type: 'SET_LOADING', value: false });
   }
 
   openModal () {
@@ -34,6 +34,7 @@ class VetList extends React.Component {
   }
 
   constructor (props) {
+    props.dispatch({ type: 'SET_LOADING', value: true });
     super(props);
   }
 
@@ -46,8 +47,8 @@ class VetList extends React.Component {
               <FilterButton>Filtrar</FilterButton>
             </ContentHeader>
             {
-              this.state.loading
-              ? <div>LOADING</div>
+              this.props.states.loading
+              ? false
               : <VetListContainer>
                   {
                     this.state.vetList.map(item => (

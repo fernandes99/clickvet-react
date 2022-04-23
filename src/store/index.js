@@ -9,9 +9,9 @@ const INITIAL_STATE = {
 function reducer (state = INITIAL_STATE, action) {
     switch (action.type) {
         case 'SET_LOADING':
-            return { ...state, loading: action.set }
+            return { ...state, loading: action.value }
         case 'SET_VET_LIST':
-            return { ...state, vetList: action.set }
+            return { ...state, vetList: action.value }
         default:
             return state
     }

@@ -8,7 +8,7 @@ import Routes from './routes';
 import Header from "./components/Header/header";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer/footer";
-import { Loading } from "./components/Loading/styles";
+import Loading from "./components/Loading/styles";
 
 // STYLE BASE
 import "./styles/reset.css";
@@ -25,7 +25,7 @@ function App() {
             <Toaster position="bottom-center" />
             <Footer />
             { loading
-                ? <Loading />
+                ? <Loading><span>Carregando</span><div className="loader"><div></div><div></div></div></Loading>
                 : false }
         </Router>
     )
