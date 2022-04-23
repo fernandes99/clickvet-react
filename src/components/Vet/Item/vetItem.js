@@ -5,8 +5,6 @@ import Avatar from '@mui/material/Avatar';
 import { Item, Card, CardContent } from './styles';
 
 const VetItem = (props) => {
-    if (!props) return;
-
     const formatedValue = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL', }).format((props.appoitmentValue / 100).toFixed(2));
 
     return (

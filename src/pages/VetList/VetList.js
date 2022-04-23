@@ -11,26 +11,14 @@ function withRouter (Component) {
 }
 
 class VetList extends React.Component {
-  state = {
-    openModal: false,
-    vetList: []
-  };
-
   getVetList = async () => {
     const url = 'https://script.google.com/macros/s/AKfycbyMznKdp9vqTZ9ZEws-2KpcGQuf6BM2JW5tMUsPQwzVqCydmLPVKxmHu-uPpf3Maz02/exec';
     return await fetch(url).then(res => res.json());
   }
 
   async componentDidMount () {
-    this.setState({
-      vetList: await this.getVetList()
-    });
-
+    this.props.dispatch({ type: 'SET_VET_LIST', value: await this.getVetList() });
     this.props.dispatch({ type: 'SET_LOADING', value: false });
-  }
-
-  openModal () {
-    this.setState({ openModal: !this.state.openModal });
   }
 
   constructor (props) {
@@ -51,9 +39,9 @@ class VetList extends React.Component {
               ? false
               : <VetListContainer>
                   {
-                    this.state.vetList.map(item => (
-                      <Link key={item[0]} to={`${item[1]}`}>
-                        <VetItem key={item[0]} name={`${item[1]}`} appoitmentValue={`${item[2]}`} image={`${item[3]}`} about={`${item[4]}`} onClick={() => this.openModal() }/>
+                    this.props.states.vetList.map(item => (
+                      <Link key={item[0]} to={`${item[1]}`} state={{ vetProfileData: item }}>
+                        <VetItem key={item[0]} name={`${item[1]}`} appoitmentValue={`${item[2]}`} image={`${item[3]}`} about={`${item[4]}`} />
                       </Link>
                     ))
                   }

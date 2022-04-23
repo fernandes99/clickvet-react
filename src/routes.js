@@ -8,7 +8,7 @@ import {
 
 import Home from "./pages/Home/home";
 import VetList from "./pages/VetList/VetList";
-import VetProfile from "./pages/VetProfile/vetProfile";
+import VetProfile from "./pages/VetProfile/VetProfile";
 
 export default function MainRoutes() {
     const states = useSelector(state => state);
@@ -19,7 +19,7 @@ export default function MainRoutes() {
         <Routes>
             <Route path='/' element={<Home navigate={navigate} />} />
             <Route path='veterinarios/:city' element={<VetList states={states} dispatch={dispatch}/>} />
-            <Route path='veterinarios/:city/:vetId' element={<VetProfile />} />
+            <Route path='veterinarios/:city/:vetId' element={<VetProfile states={states} />} />
         </Routes>
     );
 }

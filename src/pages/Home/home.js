@@ -35,7 +35,7 @@ export default class Home extends React.Component {
         toast.success(<b>CEP encontrado!</b>);
         this.setState({ address: res.data });
 
-        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, { state: { test: 'teste' } });
+        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, { state: { test: 'foo' } });
       })
       .catch(error => {
         console.log('Error', error.message);
