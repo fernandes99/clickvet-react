@@ -9,8 +9,12 @@ const ListItem = (props) => {
                     <props.icon />
                 </div>
                 <div className="content">
-                    <span className="title">{props.title}</span>
-                    <span className="subtitle">{props.subtitle}</span>
+                    { props.title
+                        ? <span className="title">{props.title}</span>
+                        : false }
+                    { props.subtitle
+                        ? <span className="subtitle">{props.subtitle}</span>
+                        : false }
                 </div>
             </Item>
             <Divider />

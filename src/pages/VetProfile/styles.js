@@ -4,18 +4,6 @@ import styled from 'styled-components'
 export const Background = styled.div`
   position: relative;
   background: #fafafa;
-  z-index: 0;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100vw;
-    height: 200px;
-    background: var(--orange);
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
 `;
 
 export const Container = styled.div`
@@ -47,13 +35,26 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   background: #fff;
   border-radius: 8px;
-  padding: 16px;
+  padding: 24px;
   box-shadow: 0px 2px 6px rgb(63 15 0 / 5%);
+  overflow: hidden;
+
+  &.profile-background:before {
+    content: "";
+    background: var(--orange);
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
 
   @media (min-width: 1000px) {
     padding: 32px;
@@ -62,7 +63,7 @@ export const Box = styled.div`
 
 export const ProfileContent = styled.div`
   img {
-    border: 1.5px solid var(--orange);
+    border: 2px solid #fff;
     border-radius: 50%;
   }
 
@@ -84,13 +85,25 @@ export const ProfileContent = styled.div`
       }
     }
 
-    .price {
+    .content {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
-      span:last-child {
-        color: var(--orange);
-        font-size: 1.5em;
+      .price {
+        display: flex;
+        flex-direction: column;
+
+        span:last-child {
+          color: var(--orange);
+          font-size: 1.5em;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        padding: 14px 16px;
       }
     }
 
@@ -103,6 +116,10 @@ export const ProfileContent = styled.div`
 export const ListContent = styled.div`
   .list-title {
     font-size: 20px;
+  }
+
+  ul {
+    margin-top: 24px;
   }
 `;
 

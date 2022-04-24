@@ -4,6 +4,9 @@ import { useLocation, useParams } from 'react-router';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
+import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
+import PetsRoundedIcon from '@mui/icons-material/PetsRounded';
+import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 
 import { Background, Container, Box, Tags, Rating, ProfileContent, ListContent } from './styles';
 import ListItem from '../../components/Vet/Profile/listItem';
@@ -18,7 +21,10 @@ class VetProfile extends React.Component {
 
   render() {
     const icons = {
-      location: () => (<FmdGoodOutlinedIcon />)
+      location: () => (<FmdGoodOutlinedIcon />),
+      money: () => (<PaymentRoundedIcon />),
+      pet: () => (<PetsRoundedIcon />),
+      web: () => (<LanguageRoundedIcon />)
     }
 
     const data = this.props.location.state.vetProfileData;
@@ -34,7 +40,7 @@ class VetProfile extends React.Component {
             <span>Link 2</span>
             <span>Link 3</span>
           </Breadcrumbs>
-          <Box>
+          <Box className="profile-background">
             <ProfileContent>
               <Avatar alt={data.name} src={data.profileImageUrl} sx={{ width: 120, height: 120 }}/>
                 <div className='info'>
@@ -53,9 +59,12 @@ class VetProfile extends React.Component {
                   <div className='about'>
                     <span>{data.about}</span>
                   </div>
-                  <div className='price'>
-                    <span className='info-title'>Valor da consulta:</span>
-                    <span>{formatedValue}</span>
+                  <div className='content'>
+                    <div className='price'>
+                      <span className='info-title'>Valor da consulta:</span>
+                      <span>{formatedValue}</span>
+                    </div>
+                    <button>Enviar mensagem</button>
                   </div>
                 </div>
               </ProfileContent>
@@ -71,6 +80,18 @@ class VetProfile extends React.Component {
                   title="Avenida Soledade, 569 torre beta sala 1005/ 10 Andar"
                   subtitle="Petrópolis, Porto Alegre Dermamed Center"
                   icon={icons.location}
+                />
+                <ListItem
+                  title="Atende cachorros, gatos e aves"
+                  icon={icons.pet}
+                />
+                <ListItem
+                  title="Cartão de Crédito, Dinheiro, Cartão de Débito, Transferência Bancária, PIX"
+                  icon={icons.money}
+                />
+                <ListItem
+                  title="http://www.website.br/"
+                  icon={icons.web}
                 />
               </ul>
             </ListContent>

@@ -3,8 +3,9 @@ import styled from 'styled-components'
 export const Item = styled.li`
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
   grid-template-columns: min-content;
-  gap: 8px;
+  gap: 12px;
 
   .icon {
     padding-top: 3px;
@@ -25,6 +26,12 @@ export const Item = styled.li`
 
 export const Divider = styled.div`
   width: 100%;
-  height: 2px;
-  background: var(--grayLight);
+  height: 1px;
+  background: var(--gray-lighter);
+  border-radius: 2px;
+  margin: 16px auto;
+
+  &:last-child {
+    display: none;
+  }
 `;
