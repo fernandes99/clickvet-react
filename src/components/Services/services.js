@@ -7,18 +7,18 @@ const Services = () => {
         <Container>
             <div className="content">
                 <i>🧐</i>
-                <h3>Consultas</h3>
-                <p>Nossa equipe de veterinários é formada por profissionais de quase todas as especialidades que levam saúde e qualidade de vida para você e seus pets.</p>
+                <h3>Pesquise veterinários da sua região</h3>
+                <p>Escolha o endereço que gostaria de agendar a consulta do seu pet.</p>
             </div>
             <div className="content">
-                <i>🐶</i>
-                <h3>Exames</h3>
-                <p>É isso mesmo! Você pode agendar e realizar diversos tipos de exames sem sair da sua casa! Nossa equipe conta com profissionais especializados em diversas áreas.</p>
+                <i>✅</i>
+                <h3>Escolha o veterinário ideal</h3>
+                <p>Confira os veterinários disponíveis na sua região, com base no preço, avaliações e especialidade (clínica geral, fisioterapia…)</p>
             </div>
             <div className="content">
-                <i>💉</i>
-                <h3>Vacinas</h3>
-                <p>De forma segura e prática, sem filas nem stress, que pode ser causado em ambientes estranhos, você pode vacinar o seu pet no conforto do seu sofá!</p>
+                <i>⚡</i>
+                <h3>Envie uma mensagem para o veterinário</h3>
+                <p>Conecte-se com o veterinário e combine uma data e horário para sua consulta!</p>
             </div>
         </Container>
     );

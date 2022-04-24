@@ -7,6 +7,7 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import PaymentRoundedIcon from '@mui/icons-material/PaymentRounded';
 import PetsRoundedIcon from '@mui/icons-material/PetsRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
+import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded';
 
 import { Background, Container, Box, Tags, Rating, ProfileContent, ListContent } from './styles';
 import ListItem from '../../components/Vet/Profile/listItem';
@@ -24,7 +25,8 @@ class VetProfile extends React.Component {
       location: () => (<FmdGoodOutlinedIcon />),
       money: () => (<PaymentRoundedIcon />),
       pet: () => (<PetsRoundedIcon />),
-      web: () => (<LanguageRoundedIcon />)
+      web: () => (<LanguageRoundedIcon />),
+      phone: () => (<PhoneRoundedIcon />)
     }
 
     const data = this.props.location.state.vetProfileData;
@@ -34,13 +36,13 @@ class VetProfile extends React.Component {
     return (
       <>
       <Background>
-        <Container>
-          <Breadcrumbs className='breadcrumb' separator={<ChevronRightRoundedIcon fontSize='' />}>
+        <Container className='profile-container'>
+          {/* <Breadcrumbs className='breadcrumb' separator={<ChevronRightRoundedIcon fontSize='' />}>
             <span>Link 1</span>
             <span>Link 2</span>
             <span>Link 3</span>
-          </Breadcrumbs>
-          <Box className="profile-background">
+          </Breadcrumbs> */}
+          <Box className='profile-box'>
             <ProfileContent>
               <Avatar alt={data.name} src={data.profileImageUrl} sx={{ width: 120, height: 120 }}/>
                 <div className='info'>
@@ -77,20 +79,25 @@ class VetProfile extends React.Component {
               <span className='list-title'>Mais informações:</span>
               <ul>
                 <ListItem
-                  title="Avenida Soledade, 569 torre beta sala 1005/ 10 Andar"
-                  subtitle="Petrópolis, Porto Alegre Dermamed Center"
+                  title='Avenida Soledade, 569 torre beta sala 1005/ 10 Andar'
+                  subtitle='Petrópolis, Porto Alegre Dermamed Center'
                   icon={icons.location}
                 />
                 <ListItem
-                  title="Atende cachorros, gatos e aves"
+                  title='Atende cachorros, gatos e aves'
                   icon={icons.pet}
                 />
                 <ListItem
-                  title="Cartão de Crédito, Dinheiro, Cartão de Débito, Transferência Bancária, PIX"
+                  title='Cartão de Crédito, Dinheiro, Cartão de Débito, Transferência Bancária, PIX'
                   icon={icons.money}
                 />
                 <ListItem
-                  title="http://www.website.br/"
+                  type='phone'
+                  title='(12) 99130-7096'
+                  icon={icons.phone}
+                />
+                <ListItem
+                  title='http://www.website.br/'
                   icon={icons.web}
                 />
               </ul>

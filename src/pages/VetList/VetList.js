@@ -16,6 +16,8 @@ class VetList extends React.Component {
     return await fetch(url).then(res => res.json());
   }
 
+  title = () => `Veterinários ${ this.props.params.city ? `em ${this.props.params.city}:` : 'perto de você:'}`;
+
   async componentDidMount () {
     this.props.dispatch({ type: 'SET_VET_LIST', value: await this.getVetList() });
     this.props.dispatch({ type: 'SET_LOADING', value: false });
@@ -31,7 +33,7 @@ class VetList extends React.Component {
       <>
         <Container>
             <ContentHeader>
-              <h2>Veterinários perto de você:</h2>
+              <h2>{ this.title() }</h2>
               <FilterButton>Filtrar</FilterButton>
             </ContentHeader>
             {

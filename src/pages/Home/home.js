@@ -35,7 +35,7 @@ export default class Home extends React.Component {
         toast.success(<b>CEP encontrado!</b>);
         this.setState({ address: res.data });
 
-        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, { state: { test: 'foo' } });
+        return this.props.navigate(`veterinarios/${this.state.address.localidade}`, { state: { address: this.state.address } });
       })
       .catch(error => {
         console.log('Error', error.message);
@@ -57,8 +57,8 @@ export default class Home extends React.Component {
         <Container>
             <Main>
                 <Info>
-                    <h1>Encontre os melhores <br /><strong>veterinários perto de você!</strong></h1>
-                    <h2>Faça consultas, exames e vacinas sem sair da sua casa</h2>
+                    <h1>Encontre os melhores <br /><strong>veterinários home care perto de você!</strong></h1>
+                    <h2>A forma mais rápida para encontrar o melhor veterinário home care da sua região.</h2>
                     <div>
                       <input type="number" defaultValue={this.state.cepSearched} onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>
                       <button onClick={this.searchCEP}>Buscar CEP</button>

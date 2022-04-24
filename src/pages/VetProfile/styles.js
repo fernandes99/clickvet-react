@@ -13,7 +13,11 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   margin: auto;
-  padding: 0 16px 20px;
+  padding: 20px 0;
+
+  &.profile-container {
+    padding: 0;
+  }
 
   .breadcrumb {
     margin: 24px 0;
@@ -31,6 +35,10 @@ export const Container = styled.div`
 
   @media (min-width: 1000px) {
     width: 1000px;
+
+    &.profile-container {
+      padding: 40px 0 0 0;
+    }
   }
 `;
 
@@ -40,16 +48,17 @@ export const Box = styled.div`
   flex-direction: column;
   width: 100%;
   background: #fff;
-  border-radius: 8px;
   padding: 24px;
   box-shadow: 0px 2px 6px rgb(63 15 0 / 5%);
   overflow: hidden;
 
-  &.profile-background:before {
+  &.profile-box:before {
     content: "";
-    background: var(--orange);
+    background: linear-gradient(90deg, var(--orange), #69147c00), url(https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_1280.jpg);
+    background-blend-mode: normal;
+    background-position: center;
     width: 100%;
-    height: 90px;
+    height: 120px;
     position: absolute;
     top: 0;
     left: 0;
@@ -57,6 +66,7 @@ export const Box = styled.div`
   }
 
   @media (min-width: 1000px) {
+    border-radius: 8px;
     padding: 32px;
   }
 `;
