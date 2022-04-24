@@ -6,7 +6,7 @@ import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 
 import { Background, Container, Box, Tags, Rating, ProfileContent, ListContent } from './styles';
-import ListItem from '../../components/Vet/Profile/ListItem';
+import ListItem from '../../components/Vet/Profile/listItem';
 
 function withRouter (Component) {
   return props => <Component {...props} params={useParams()} location={useLocation()} />;
@@ -17,9 +17,10 @@ class VetProfile extends React.Component {
   }
 
   render() {
-    const icon = () => (
-      <FmdGoodOutlinedIcon />
-    )
+    const icons = {
+      location: () => (<FmdGoodOutlinedIcon />)
+    }
+
     const data = this.props.location.state.vetProfileData;
     const specialties = data.specialties.split(', ');
     const formatedValue = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format((data.appoitmentValue / 100).toFixed(2));
@@ -68,8 +69,8 @@ class VetProfile extends React.Component {
               <ul>
                 <ListItem
                   title="Avenida Soledade, 569 torre beta sala 1005/ 10 Andar"
-                  subtitle="Petrópolis, Porto Alegre DermaMed Center"
-                  icon={icon}
+                  subtitle="Petrópolis, Porto Alegre Dermamed Center"
+                  icon={icons.location}
                 />
               </ul>
             </ListContent>

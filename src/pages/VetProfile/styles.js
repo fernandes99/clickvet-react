@@ -101,7 +101,9 @@ export const ProfileContent = styled.div`
 `;
 
 export const ListContent = styled.div`
-  
+  .list-title {
+    font-size: 20px;
+  }
 `;
 
 export const Rating = styled.div`
