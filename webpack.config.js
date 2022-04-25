@@ -9,7 +9,7 @@ module.exports = (env, args) => {
     devtool: "source-map",
     entry: path.resolve(__dirname, "src", "index.js" ),
     output: {
-      publicPath: '',
+      publicPath: '/',
     },
     module: {
       rules: [
