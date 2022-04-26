@@ -73,7 +73,7 @@ export const Box = styled.div`
 
 export const ProfileContent = styled.div`
   img {
-    border: 2px solid #fff;
+    border: 4px solid #fff;
     border-radius: 50%;
   }
 

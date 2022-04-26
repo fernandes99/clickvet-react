@@ -33,43 +33,43 @@ class VetProfile extends React.Component {
     const specialties = data.specialties.split(', ');
     const formatedValue = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format((data.appoitmentValue / 100).toFixed(2));
 
+    const sendMessage = (message) => {
+      const url = `https://api.whatsapp.com/send?phone=55${data.phone}&text=${message}`;
+      window.open(url, '_blank');
+    }
+
     return (
       <>
       <Background>
         <Container className='profile-container'>
-          {/* <Breadcrumbs className='breadcrumb' separator={<ChevronRightRoundedIcon fontSize='' />}>
-            <span>Link 1</span>
-            <span>Link 2</span>
-            <span>Link 3</span>
-          </Breadcrumbs> */}
           <Box className='profile-box'>
             <ProfileContent>
               <Avatar alt={data.name} src={data.profileImageUrl} sx={{ width: 120, height: 120 }}/>
-                <div className='info'>
-                  <h3>{data.name}</h3>
-                  <Rating>
-                    <StarRateRoundedIcon className='star' fontSize='medium'/>
-                    <span className='rate'>4,9</span>
-                    <span className='votes'>(52)</span>
-                    <span className='action'>Ver avaliações <ChevronRightRoundedIcon className='chrevron' fontSize='large' /></span>
-                  </Rating>
-                  <Tags>
-                    {specialties.map((specialty, intex) => (
-                      <span key={intex}>{specialty}</span>
-                    ))}
-                  </Tags>
-                  <div className='about'>
-                    <span>{data.about}</span>
-                  </div>
-                  <div className='content'>
-                    <div className='price'>
-                      <span className='info-title'>Valor da consulta:</span>
-                      <span>{formatedValue}</span>
-                    </div>
-                    <button>Enviar mensagem</button>
-                  </div>
+              <div className='info'>
+                <h3>{data.name}</h3>
+                <Rating>
+                  <StarRateRoundedIcon className='star' fontSize='medium'/>
+                  <span className='rate'>4,9</span>
+                  <span className='votes'>(52)</span>
+                  <span className='action'>Ver avaliações <ChevronRightRoundedIcon className='chrevron' fontSize='large' /></span>
+                </Rating>
+                <Tags>
+                  {specialties.map((specialty, intex) => (
+                    <span key={intex}>{specialty}</span>
+                  ))}
+                </Tags>
+                <div className='about'>
+                  <span>{data.about}</span>
                 </div>
-              </ProfileContent>
+                <div className='content'>
+                  <div className='price'>
+                    <span className='info-title'>Valor da consulta:</span>
+                    <span>{formatedValue}</span>
+                  </div>
+                  <button onClick={() => sendMessage('Olá, vi seu perfil no Clickvet, gostaria de agendar uma consulta para o meu pet!')}>Enviar mensagem</button>
+                </div>
+              </div>
+            </ProfileContent>
           </Box>
         </Container>
 
@@ -79,25 +79,21 @@ class VetProfile extends React.Component {
               <span className='list-title'>Mais informações:</span>
               <ul>
                 <ListItem
-                  title='Avenida Soledade, 569 torre beta sala 1005/ 10 Andar'
-                  subtitle='Petrópolis, Porto Alegre Dermamed Center'
+                  title={`${data.clinicAddress[0].street}, ${data.clinicAddress[0].number}, ${data.clinicAddress[0].neighborhood}, ${data.clinicAddress[0].complement}`}
+                  subtitle={`${data.clinicAddress[0].city}, ${data.clinicAddress[0].state}`}
                   icon={icons.location}
                 />
                 <ListItem
-                  title='Atende cachorros, gatos e aves'
+                  title={`Faz consultas ${data.meetsSpecies.length == 1 ? 'apenas em' : 'em'} ${data.meetsSpecies}`}
                   icon={icons.pet}
                 />
                 <ListItem
-                  title='Cartão de Crédito, Dinheiro, Cartão de Débito, Transferência Bancária, PIX'
-                  icon={icons.money}
-                />
-                <ListItem
-                  type='phone'
-                  title='(12) 99130-7096'
+                  type={'phone'}
+                  title={data.phone}
                   icon={icons.phone}
                 />
                 <ListItem
-                  title='http://www.website.br/'
+                  title={data.website}
                   icon={icons.web}
                 />
               </ul>

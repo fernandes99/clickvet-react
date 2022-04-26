@@ -4,3 +4,4 @@
 ___
 
 > Esse é um projeto **não completo** para estudo.
+> Principais tecnologias: React, Redux, React Router DOM, Style Component.
