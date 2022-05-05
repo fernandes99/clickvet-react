@@ -57,7 +57,7 @@ export default class Home extends React.Component {
         <Container>
             <Main>
                 <Info>
-                    <h1>Encontre os melhores <br /><strong>veterinários home care perto de você!</strong></h1>
+                    <h1>Encontre os melhzores <br /><strong>veterinários home care perto de você!</strong></h1>
                     <h2>A forma mais rápida para encontrar o melhor veterinário home care da sua região.</h2>
                     <div>
                       <input type="number" defaultValue={this.state.cepSearched} onChange={this.setCepValue} onKeyDownCapture={this.handleKeyDown} placeholder={"Digite seu CEP"}/>

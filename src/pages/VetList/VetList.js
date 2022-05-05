@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 
 import VetItem from '../../components/Vet/Item/vetItem';
-import { Container, VetListContainer, ContentHeader, FilterButton } from './styles';
+import { Container, VetListContainer, ContentHeader, FilterButton, Filter } from './styles';
 
 const VetList = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const states = useSelector(state => state);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -48,7 +48,43 @@ const VetList = () => {
               </VetListContainer>
           }
       </Container>
-      <Modal open={open} onClose={handleClose}><span>Teste</span></Modal>
+      <Modal open={open} onClose={handleClose}>
+        <Filter>
+          <form className="filter">
+            <fieldset data-filter-type='specialties'>
+              <legend>Para qual espécie?</legend>
+              <div class='checkbox'>
+                <input type='checkbox' id='canine' />
+                <label for='canine'>Cachorros</label>
+              </div>
+              <div class='checkbox'>
+                <input type='checkbox' id='feline' />
+                <label for='feline'>Gatos</label>
+              </div>
+              <div class='checkbox'>
+                <input type='checkbox' id='wild' />
+                <label for='wild'>Aves</label>
+              </div>
+            </fieldset>
+            <fieldset data-filter-type='specialties'>
+              <legend>Especialidade do veterinário</legend>
+              <div class='checkbox'>
+                <label for='general'>Clínico Geral</label>
+                <input type='checkbox' id='general' />
+              </div>
+              <div class='checkbox'>
+                <label for='dentist'>Dentista</label>
+                <input type='checkbox' id='dentist' />
+              </div>
+              <div class='checkbox'>
+                <label for='cardiologist'>Cardiologista</label>
+                <input type='checkbox' id='cardiologist' />
+              </div>
+            </fieldset>
+            <button type='submit'>Filtrar</button>
+          </form>
+        </Filter>
+      </Modal>
     </>
   );
 }

@@ -11,7 +11,7 @@ ol[class] {
   padding: 0;
 }
 
-ol, ul {
+ol, ul, fieldset, legend {
 	list-style: none;
   padding: 0;
 }
@@ -30,6 +30,7 @@ figure,
 figcaption,
 blockquote,
 dl,
+fieldset,
 dd {
   margin: 0;
 }
@@ -78,7 +79,7 @@ select {
   font: inherit;
 }
 
-textarea, input {
+textarea, input, fieldset {
   border:none;
   background-image:none;
   background-color:transparent;

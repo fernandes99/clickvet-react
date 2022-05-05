@@ -54,3 +54,61 @@ export const FilterButton = styled.button`
     padding: 4px 14px 2px;
   }
 `;
+
+export const Filter = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 32px;
+  width: 80vw;
+  border-radius: 8px;
+  color: var(--gray-darker);
+
+  form {
+    display: grid;
+    gap: 24px;
+
+    fieldset {
+      width: 100%;
+      display: grid;
+      gap: 8px;
+
+      legend {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .checkbox {
+        position: relative;
+        width: 100%;
+        background: var(--gray-lighter);
+        border-radius: 8px;
+        padding: 12px 16px;
+        display: flex;
+        justify-content: flex-end;
+
+        label {
+          position: absolute;
+          top: 0;
+          left: 20px;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+        }
+
+        input {
+          outline: 2px #DBDBDB;
+          width: 24px;
+          height: 24px;
+          margin: 0;
+          box-shadow: inset 0px 0px 0px 2px #e1e1e1;
+        }
+      }
+    }
+  }
+
+`;
